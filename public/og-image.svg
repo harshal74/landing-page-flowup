@@ -1,0 +1,16 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#080D17"/>
+  <circle cx="600" cy="315" r="400" fill="url(#glow)"/>
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop stop-color="#FF6B00" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#FF6B00" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="540" y="240" width="50" height="50" rx="10" fill="#FF6B00"/>
+  <rect x="610" y="240" width="50" height="50" rx="10" fill="#FF7A00"/>
+  <rect x="540" y="310" width="50" height="50" rx="10" fill="#FF8C33"/>
+  <rect x="610" y="310" width="50" height="50" rx="10" fill="#FF6B00"/>
+  <text x="600" y="420" text-anchor="middle" font-family="Inter, sans-serif" font-size="56" font-weight="700" fill="#FFFFFF">FlowUp</text>
+  <text x="600" y="470" text-anchor="middle" font-family="Inter, sans-serif" font-size="24" font-weight="500" fill="#8A94A6">Smart Restaurant Management</text>
+</svg>
