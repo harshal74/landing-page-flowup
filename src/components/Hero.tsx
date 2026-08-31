@@ -102,8 +102,8 @@ export function Hero() {
             </p>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-flowup-muted sm:text-lg lg:mx-0">
               Smart restaurant management, digital ordering, and real-time operations — all in one
-              platform. Simplify ordering, manage operations, and deliver a faster digital experience
-              to your customers.
+              platform. Accept dine-in, delivery, and take away orders while managing your menu,
+              billing, staff, and analytics from one place.
             </p>
 
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">

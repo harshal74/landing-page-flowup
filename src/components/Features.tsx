@@ -15,15 +15,16 @@ import { SectionHeading, FeatureCard } from '@/components/ui';
 import { CheckoutMock, MenuMock } from '@/components/ProductMocks';
 
 const FEATURES = [
-  { icon: <QrCode className="h-6 w-6" />, title: 'Digital Menu', description: 'Create and manage beautiful digital menus that customers can access instantly.' },
-  { icon: <Smartphone className="h-6 w-6" />, title: 'QR Ordering', description: 'Customers scan, browse, and order directly from their table or phone.' },
-  { icon: <ShoppingBag className="h-6 w-6" />, title: 'Online Ordering', description: 'Accept restaurant orders digitally with a streamlined customer checkout experience.' },
+  { icon: <QrCode className="h-6 w-6" />, title: 'Digital Menu', description: 'Create and manage beautiful digital menus that customers can access instantly via QR code.' },
+  { icon: <Smartphone className="h-6 w-6" />, title: 'QR Ordering', description: 'Customers scan, browse, and order directly from their table or phone — no app download needed.' },
+  { icon: <ShoppingBag className="h-6 w-6" />, title: 'Online Ordering', description: 'Accept dine-in, delivery, and take away orders digitally with a streamlined customer checkout experience.' },
   { icon: <ClipboardList className="h-6 w-6" />, title: 'Order Management', description: 'Manage incoming orders efficiently and keep restaurant staff informed in real time.' },
   { icon: <LayoutDashboard className="h-6 w-6" />, title: 'Restaurant Dashboard', description: 'Get a centralized view of restaurant activity, orders, and performance.' },
   { icon: <BarChart3 className="h-6 w-6" />, title: 'Analytics', description: 'Understand orders, revenue, customers, and restaurant performance at a glance.' },
-  { icon: <Table2 className="h-6 w-6" />, title: 'Table Management', description: 'Manage restaurant tables and improve dine-in operations.' },
-  { icon: <Users className="h-6 w-6" />, title: 'Customer Management', description: 'Keep track of customer activity and improve the overall experience.' },
-  { icon: <Receipt className="h-6 w-6" />, title: 'Billing', description: 'Manage billing information and order totals efficiently from one place.' },
+  { icon: <Table2 className="h-6 w-6" />, title: 'Table Management', description: 'Manage restaurant tables and improve dine-in operations in real time.' },
+  { icon: <Users className="h-6 w-6" />, title: 'Customer Management', description: 'Keep track of customer activity and order history to improve the overall experience.' },
+  { icon: <Receipt className="h-6 w-6" />, title: 'Billing & GST', description: 'Generate bills with configurable SGST/CGST, discounts, and payment confirmation from one place.' },
+  { icon: <UserCog className="h-6 w-6" />, title: 'Staff Management', description: 'Manage waiter and kitchen staff with role-based access for smooth daily operations.' },
 ];
 
 export function Features() {

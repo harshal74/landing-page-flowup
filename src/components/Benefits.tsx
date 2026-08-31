@@ -3,10 +3,10 @@ import { ClipboardList, Zap, Eye, Layers } from 'lucide-react';
 import { SectionHeading } from '@/components/ui';
 
 const BENEFITS = [
-  { icon: <ClipboardList className="h-7 w-7" />, title: 'Less Manual Work', text: 'Reduce repetitive operational tasks with a connected, automated platform.' },
-  { icon: <Zap className="h-7 w-7" />, title: 'Faster Ordering', text: 'Give customers a streamlined digital ordering experience from scan to checkout.' },
-  { icon: <Eye className="h-7 w-7" />, title: 'Better Visibility', text: 'Understand what is happening in your restaurant with real-time dashboards and analytics.' },
-  { icon: <Layers className="h-7 w-7" />, title: 'One Connected Platform', text: 'Bring important restaurant workflows into one system — no more switching between tools.' },
+  { icon: <ClipboardList className="h-7 w-7" />, title: 'Less Manual Work', text: 'Reduce repetitive operational tasks with a connected, automated platform that keeps everything in sync.' },
+  { icon: <Zap className="h-7 w-7" />, title: 'Faster Ordering', text: 'Give customers a streamlined digital ordering experience — dine-in, delivery, or take away, from scan to checkout.' },
+  { icon: <Eye className="h-7 w-7" />, title: 'Better Visibility', text: 'Understand what is happening in your restaurant with real-time dashboards, analytics, and live order tracking.' },
+  { icon: <Layers className="h-7 w-7" />, title: 'One Connected Platform', text: 'Bring menus, orders, billing, GST, tables, staff, and customers into one system — no more switching between tools.' },
 ];
 
 export function Benefits() {

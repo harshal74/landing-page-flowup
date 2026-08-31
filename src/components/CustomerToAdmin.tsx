@@ -16,7 +16,7 @@ import { SectionHeading } from '@/components/ui';
 import { CheckoutMock, DashboardMock } from '@/components/ProductMocks';
 
 const CUSTOMER_STEPS = [
-  { icon: <UtensilsCrossed className="h-4 w-4" />, text: 'Choose dine-in or delivery' },
+  { icon: <UtensilsCrossed className="h-4 w-4" />, text: 'Dine-in, delivery, or take away' },
   { icon: <QrCode className="h-4 w-4" />, text: 'Scan & view menu' },
   { icon: <ShoppingBag className="h-4 w-4" />, text: 'Add items to cart' },
   { icon: <User className="h-4 w-4" />, text: 'Enter customer details' },

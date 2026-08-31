@@ -147,6 +147,7 @@ export function CheckoutMock({ className = '' }: { className?: string }) {
         <div className="flex gap-1.5">
           <span className="rounded-md bg-flowup-orange px-2 py-0.5 text-[9px] font-semibold text-white">Delivery</span>
           <span className="rounded-md bg-flowup-card px-2 py-0.5 text-[9px] font-medium text-flowup-muted">Dine-in</span>
+          <span className="rounded-md bg-flowup-card px-2 py-0.5 text-[9px] font-medium text-flowup-muted">Take Away</span>
         </div>
       </div>
 
@@ -289,6 +290,12 @@ export function PhoneMock({ className = '' }: { className?: string }) {
           <div className="mx-3 mb-2 rounded-lg bg-gradient-to-br from-flowup-orange to-flowup-orange-bright p-2.5">
             <p className="text-[8px] font-bold text-white">Scan. Browse. Order.</p>
             <p className="text-[7px] text-white/80">Table 7 · Dine-in</p>
+          </div>
+          {/* Order type tabs */}
+          <div className="mx-3 mb-2 flex gap-1">
+            <span className="rounded bg-flowup-orange px-1.5 py-0.5 text-[7px] font-bold text-white">Dine-in</span>
+            <span className="rounded bg-flowup-card/80 px-1.5 py-0.5 text-[7px] text-flowup-muted">Delivery</span>
+            <span className="rounded bg-flowup-card/80 px-1.5 py-0.5 text-[7px] text-flowup-muted">Take Away</span>
           </div>
           {/* Menu items */}
           <div className="space-y-1.5 px-3 pb-3">

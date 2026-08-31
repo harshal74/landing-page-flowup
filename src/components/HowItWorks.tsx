@@ -5,8 +5,8 @@ import { PhoneMock } from '@/components/ProductMocks';
 
 const STEPS = [
   { num: '01', icon: <Settings className="h-6 w-6" />, title: 'Set Up', text: 'Add your restaurant, menu, categories, tables, and operational details.' },
-  { num: '02', icon: <ShoppingBag className="h-6 w-6" />, title: 'Customers Order', text: 'Customers discover your menu through QR ordering or online ordering.' },
-  { num: '03', icon: <LayoutDashboard className="h-6 w-6" />, title: 'You Manage Everything', text: 'Orders, customers, revenue, menu, tables, and operations are managed from FlowUp.' },
+  { num: '02', icon: <ShoppingBag className="h-6 w-6" />, title: 'Customers Order', text: 'Customers discover your menu through QR ordering, delivery, or take away.' },
+  { num: '03', icon: <LayoutDashboard className="h-6 w-6" />, title: 'You Manage Everything', text: 'Orders, customers, revenue, menu, tables, staff, and billing — managed from FlowUp.' },
 ];
 
 export function HowItWorks() {
@@ -77,6 +77,7 @@ export function QRSection() {
                 'Works on any smartphone camera',
                 'Real-time menu with live availability',
                 'Seamless checkout in a few taps',
+                'Dine-in, delivery, or take away',
               ].map((t) => (
                 <div key={t} className="flex items-center gap-3">
                   <span className="grid h-6 w-6 place-items-center rounded-full bg-flowup-orange/15 text-flowup-orange">

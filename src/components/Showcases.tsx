@@ -133,7 +133,7 @@ export function MenuShowcase() {
 /* Checkout showcase */
 export function CheckoutShowcase() {
   const callouts = [
-    { icon: <UtensilsCrossed className="h-4 w-4" />, text: 'Dine-in / Delivery', pos: 'left-2 top-[8%]' },
+    { icon: <UtensilsCrossed className="h-4 w-4" />, text: 'Dine-in / Delivery / Take Away', pos: 'left-2 top-[8%]' },
     { icon: <User className="h-4 w-4" />, text: 'Customer details', pos: 'right-2 top-[22%]' },
     { icon: <MapPin className="h-4 w-4" />, text: 'Delivery address', pos: 'left-2 top-[42%]' },
     { icon: <Receipt className="h-4 w-4" />, text: 'Item total & charges', pos: 'right-2 top-[58%]' },
@@ -154,7 +154,7 @@ export function CheckoutShowcase() {
             />
             <div className="mt-8 space-y-3">
               {[
-                'Dine-in or delivery options',
+                'Dine-in, delivery, or take away',
                 'Customer details & delivery address',
                 'Order notes for special requests',
                 'Transparent item total & delivery charge',

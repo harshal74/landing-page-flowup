@@ -18,7 +18,10 @@ const PRODUCT_LINKS = [
   { label: 'Digital Menu', href: '#features' },
   { label: 'QR Ordering', href: '#how-it-works' },
   { label: 'Online Ordering', href: '#features' },
+  { label: 'Take Away & Delivery', href: '#features' },
   { label: 'Restaurant Dashboard', href: '#dashboard' },
+  { label: 'Billing & GST', href: '#features' },
+  { label: 'Staff Management', href: '#features' },
   { label: 'Analytics', href: '#features' },
 ];
 

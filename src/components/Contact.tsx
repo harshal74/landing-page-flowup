@@ -38,7 +38,7 @@ export function CTASection() {
               Ready to Move Your Restaurant Forward?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-flowup-muted sm:text-lg">
-              Bring your restaurant's ordering and management experience into one smarter flow.
+              Bring digital ordering, billing, staff management, and real-time operations into one smarter flow.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button variant="primary" size="lg" href="#contact">
@@ -113,9 +113,9 @@ export function Contact() {
       setForm({ name: '', restaurant: '', phone: '', email: '', city: '', message: '' });
       setTimeout(() => setSubmitted(false), 10000);
     } catch (err: any) {
-      // Graceful fallback: let the visitor email us directly.
+      // Graceful fallback — guide user to WhatsApp or email directly.
       setSendError(
-        `Couldn't send your enquiry right now. Please email us at ${EMAIL} or reach us on WhatsApp.`
+        `Couldn't reach our server right now. Please reach us on WhatsApp (+91 9284574374) or email ${EMAIL} directly.`
       );
       console.error('[Contact] submit failed:', err?.message || err);
     } finally {
@@ -135,7 +135,7 @@ export function Contact() {
         <SectionHeading
           eyebrow="Get in Touch"
           title="Let's Talk About Your Restaurant"
-          description="Tell us about your restaurant and we'll show you how FlowUp can streamline your operations and ordering."
+          description="Tell us about your restaurant and we'll show you how FlowUp can streamline your ordering, billing, and operations."
         />
 
         <div className="mt-14 grid gap-8 lg:grid-cols-5">
@@ -269,9 +269,28 @@ export function Contact() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-4 rounded-xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-300"
+                  className="mt-4 rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-200"
                 >
-                  {sendError}
+                  <p className="font-medium mb-2">Couldn't reach our server right now.</p>
+                  <p className="text-xs leading-relaxed text-amber-300/80">
+                    Please reach us directly via{' '}
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline font-semibold text-amber-200 hover:text-white"
+                    >
+                      WhatsApp (+91 9284574374)
+                    </a>{' '}
+                    or email{' '}
+                    <a
+                      href={`mailto:${EMAIL}`}
+                      className="underline font-semibold text-amber-200 hover:text-white"
+                    >
+                      {EMAIL}
+                    </a>
+                    .
+                  </p>
                 </motion.div>
               )}
             </form>
