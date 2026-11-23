@@ -40,12 +40,12 @@ export function CTASection() {
             <p className="mx-auto mt-4 max-w-xl text-base text-flowup-muted sm:text-lg">
               Bring digital ordering, billing, staff management, and real-time operations into one smarter flow.
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button variant="primary" size="lg" href="#contact">
+            <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center">
+              <Button variant="primary" size="lg" href="#contact" className="w-full sm:w-auto">
                 Get Started
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="secondary" size="lg" href="#contact">
+              <Button variant="secondary" size="lg" href="#contact" className="w-full sm:w-auto">
                 Talk to Us
               </Button>
             </div>

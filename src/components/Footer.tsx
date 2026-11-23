@@ -36,12 +36,12 @@ export function Footer() {
             <h2 className="font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl lg:text-4xl">
               Your Restaurant. Your Flow. <span className="text-gradient-orange">Smarter with FlowUp.</span>
             </h2>
-            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button variant="primary" size="lg" href="#contact">
+            <div className="mt-6 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center">
+              <Button variant="primary" size="lg" href="#contact" className="w-full sm:w-auto">
                 Get Started
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="secondary" size="lg" href="#contact">
+              <Button variant="secondary" size="lg" href="#contact" className="w-full sm:w-auto">
                 Talk to Us
               </Button>
             </div>

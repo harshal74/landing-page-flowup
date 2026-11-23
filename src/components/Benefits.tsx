@@ -73,7 +73,7 @@ export function PremiumVisual() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="relative mx-auto mt-16 h-[280px] max-w-5xl sm:h-[320px]"
+          className="relative mx-auto mt-16 h-[220px] max-w-5xl sm:h-[280px] lg:h-[320px]"
         >
           {/* Flow path */}
           <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true">

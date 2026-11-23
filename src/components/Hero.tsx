@@ -65,7 +65,9 @@ export function Hero() {
   };
 
   return (
-    <section id="top" className="relative overflow-hidden pt-28 pb-16 sm:pt-32 lg:pt-40 lg:pb-24">
+    // FIX: overflow-x-hidden instead of overflow-hidden so the section
+    // doesn't clip the bottom of the dashboard mockup on mobile.
+    <section id="top" className="relative overflow-x-hidden pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-24">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 grid-bg opacity-40" />
       <motion.div
@@ -76,7 +78,8 @@ export function Hero() {
       <div className="pointer-events-none absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-flowup-orange-bright/10 blur-[120px]" />
 
       <div className="container-px relative">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-8">
+        {/* FIX: reduced gap on mobile so the content fits in fewer vertical pixels */}
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-8">
           {/* Left: copy */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -94,50 +97,62 @@ export function Hero() {
               Built for modern restaurants
             </motion.span>
 
-            <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[4.25rem]">
+            {/* FIX: reduced base font size so the heading wraps cleanly at 320px,
+                while keeping the desktop size unchanged via lg: */}
+            <h1 className="mt-5 font-display text-[1.875rem] font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[4.25rem]">
               Run Your Restaurant <span className="text-gradient-orange">Smarter.</span>
             </h1>
-            <p className="mt-3 font-display text-xl font-semibold text-white/90 sm:text-2xl lg:text-3xl">
+            {/* FIX: reduce sub-heading on mobile */}
+            <p className="mt-3 font-display text-lg font-semibold text-white/90 sm:text-2xl lg:text-3xl">
               Everything You Need. One Flow.
             </p>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-flowup-muted sm:text-lg lg:mx-0">
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-flowup-muted sm:text-base sm:mt-5 lg:mx-0 lg:text-lg">
               Smart restaurant management, digital ordering, and real-time operations — all in one
               platform. Accept dine-in, delivery, and take away orders while managing your menu,
               billing, staff, and analytics from one place.
             </p>
 
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
-              <Button variant="primary" size="lg" href="#contact">
+            {/* FIX: w-full on mobile so buttons fill the screen width and are easy to tap */}
+            <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
+              <Button variant="primary" size="lg" href="#contact" className="w-full sm:w-auto">
                 Get Started
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="secondary" size="lg" href="#features">
+              <Button variant="secondary" size="lg" href="#features" className="w-full sm:w-auto">
                 Explore FlowUp
               </Button>
             </div>
           </motion.div>
 
-          {/* Right: 3D product showcase */}
+          {/* Right: 3D product showcase
+              FIX: remove the fixed h-[420px] on mobile — let the container
+              grow to fit the dashboard content. Fixed height only applied at lg:
+              where the layout is side-by-side and height matching is needed. */}
           <div
             ref={ref}
             onMouseMove={onMove}
             onMouseLeave={onLeave}
-            className="relative h-[420px] [perspective:1200px] sm:h-[500px] lg:h-[560px]"
+            className="relative [perspective:1200px] lg:h-[560px]"
           >
+            {/* FIX: on mobile, use normal document flow (relative + w-full) so the
+                dashboard takes its natural height. At lg: switch back to absolute
+                inset-0 positioning used by the 3D transform effect. */}
             <motion.div
               style={{ rotateX, rotateY }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.9, delay: 0.3, ease: 'easeOut' }}
-              className="absolute inset-0 [transform-style:preserve-3d]"
+              className="relative lg:absolute lg:inset-0 [transform-style:preserve-3d]"
             >
-              {/* Dashboard */}
-              <div className="absolute left-1/2 top-1/2 w-[92%] max-w-[560px] -translate-x-1/2 -translate-y-1/2">
+              {/* Dashboard — on mobile: normal flow, full-width.
+                  At lg: absolutely centered via translate trick. */}
+              <div className="relative w-full lg:absolute lg:left-1/2 lg:top-1/2 lg:w-[92%] lg:max-w-[560px] lg:-translate-x-1/2 lg:-translate-y-1/2">
                 <DashboardMock />
               </div>
 
-              {/* Floating cards */}
-              <FloatingCard depth={1.4} mouseX={sx} mouseY={sy} delay={0.6} className="left-0 top-4 sm:-left-2">
+              {/* Floating cards — hidden on mobile to avoid overflow and clutter.
+                  At sm they appear with their original positioning. */}
+              <FloatingCard depth={1.4} mouseX={sx} mouseY={sy} delay={0.6} className="hidden sm:block left-0 top-4 sm:-left-2">
                 <div className="flex items-center gap-2.5">
                   <div className="grid h-9 w-9 place-items-center rounded-lg bg-success/15 text-success">
                     <ShoppingBag className="h-4 w-4" />
@@ -154,7 +169,7 @@ export function Hero() {
                 </div>
               </FloatingCard>
 
-              <FloatingCard depth={1.8} mouseX={sx} mouseY={sy} delay={0.75} className="right-0 top-2 sm:-right-2">
+              <FloatingCard depth={1.8} mouseX={sx} mouseY={sy} delay={0.75} className="hidden sm:block right-0 top-2 sm:-right-2">
                 <div className="flex items-center gap-2.5">
                   <div className="grid h-9 w-9 place-items-center rounded-lg bg-flowup-orange/15 text-flowup-orange">
                     <TrendingUp className="h-4 w-4" />
@@ -167,7 +182,7 @@ export function Hero() {
                 </div>
               </FloatingCard>
 
-              <FloatingCard depth={1.2} mouseX={sx} mouseY={sy} delay={0.9} className="bottom-4 left-2 sm:-left-1">
+              <FloatingCard depth={1.2} mouseX={sx} mouseY={sy} delay={0.9} className="hidden sm:block bottom-4 left-2 sm:-left-1">
                 <div className="flex items-center gap-2.5">
                   <div className="grid h-9 w-9 place-items-center rounded-lg bg-flowup-orange/15 text-flowup-orange">
                     <QrCode className="h-4 w-4" />
@@ -179,7 +194,7 @@ export function Hero() {
                 </div>
               </FloatingCard>
 
-              <FloatingCard depth={2} mouseX={sx} mouseY={sy} delay={1.05} className="bottom-6 right-2 sm:-right-1">
+              <FloatingCard depth={2} mouseX={sx} mouseY={sy} delay={1.05} className="hidden sm:block bottom-6 right-2 sm:-right-1">
                 <div className="flex items-center gap-2.5">
                   <div className="grid h-9 w-9 place-items-center rounded-lg bg-flowup-orange/15 text-flowup-orange">
                     <Users className="h-4 w-4" />
