@@ -106,6 +106,12 @@ export function Contact() {
       const data = await res.json().catch(() => ({}));
 
       if (!res.ok || !data?.success) {
+        // 4xx = the server answered with a reason (validation, rate limit): show it.
+        // 5xx / unreadable = fall through to the generic contact fallback below.
+        if (res.status >= 400 && res.status < 500 && data?.message) {
+          setSendError(data.message);
+          return;
+        }
         throw new Error(data?.message || 'Failed to send enquiry.');
       }
 
